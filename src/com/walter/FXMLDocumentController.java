@@ -176,6 +176,7 @@ public class FXMLDocumentController implements Initializable {
         File selectedDirectory = chooser.showDialog(stage);
         String outPath = selectedDirectory.getAbsolutePath();
         saveSettings(Constants.OUTPUT_KEY, outPath);
+        labelOutput.setText(outPath);
         System.out.println(outPath);
     }
 
@@ -194,7 +195,7 @@ public class FXMLDocumentController implements Initializable {
 
                         Graphics gg = bufferedImg.getGraphics();
                         Graphics2D graphics = (Graphics2D) gg;
-                        graphics.setColor(Color.RED);
+                        graphics.setColor(Color.BLACK);
                         Font ff = Font.createFont(Font.TRUETYPE_FONT, new File(fontPath));
                         ff = ff.deriveFont(Font.BOLD, 55);
 
